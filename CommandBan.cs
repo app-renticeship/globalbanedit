@@ -1,4 +1,4 @@
-﻿using Rocket.API;
+using Rocket.API;
 using Rocket.Core.Logging;
 using Rocket.Unturned.Chat;
 using Rocket.Unturned.Player;
@@ -20,7 +20,7 @@ namespace Apprentice.Globalbanedit
 
         public string Name
         {
-            get { return "gban"; }
+            get { return "ban"; }
         }
 
         public string Syntax
@@ -102,8 +102,8 @@ namespace Apprentice.Globalbanedit
                     int duration = 0;
                     if (int.TryParse(command[2], out duration))
                     {
-                        uint i = Convert.ToUInt32(duration); //same behavior as checked
-                        Provider.ban(steamid, command[1], i);
+                        //uint i = Convert.ToUInt32(duration); //same behavior as checked
+                       // Provider.ban(steamid, command[1], i);
                         GlobalBan.Instance.Database.BanPlayer(charactername, steamid.ToString(), adminName, command[1], duration);
                         UnturnedChat.Say(GlobalBan.Instance.Translate("command_ban_public_reason", charactername, command[1]));
                         if (isOnline)
@@ -117,7 +117,7 @@ namespace Apprentice.Globalbanedit
                 }
                 else if (command.Length == 2)
                 {
-                    Provider.ban(steamid, command[1], 0);
+                    //Provider.ban(steamid, command[1], 0);
                     GlobalBan.Instance.Database.BanPlayer(charactername, steamid.ToString(), adminName, command[1], 0);
                     UnturnedChat.Say(GlobalBan.Instance.Translate("command_ban_public_reason", charactername, command[1]));
                     if (isOnline)
@@ -125,7 +125,7 @@ namespace Apprentice.Globalbanedit
                 }
                 else
                 {
-                    Provider.ban(steamid, "", 0);
+                    //Provider.ban(steamid, "", 0);
                     GlobalBan.Instance.Database.BanPlayer(charactername, steamid.ToString(), adminName, "", 0);
                     UnturnedChat.Say(GlobalBan.Instance.Translate("command_ban_public", charactername));
                     if (isOnline)
