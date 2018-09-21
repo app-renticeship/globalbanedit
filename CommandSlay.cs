@@ -1,4 +1,4 @@
-﻿using Rocket.API;
+using Rocket.API;
 using Rocket.Unturned.Chat;
 using SDG.Unturned;
 using Steamworks;
@@ -78,7 +78,7 @@ namespace Apprentice.Globalbanedit
 
             if (command.Length >= 2)
             {
-                Provider.ban(steamid, command[1], 31536000);
+               // Provider.ban(steamid, command[1], 31536000);
                 GlobalBan.Instance.Database.BanPlayer(charactername, steamid.ToString(), caller.DisplayName, command[1], 31536000);
                 UnturnedChat.Say(GlobalBan.Instance.Translate("command_ban_public_reason", charactername, command[1]));
                 if (isOnline)
@@ -86,7 +86,7 @@ namespace Apprentice.Globalbanedit
             }
             else
             {
-                Provider.ban(steamid, "", 31536000);
+               // Provider.ban(steamid, "", 31536000);
                 GlobalBan.Instance.Database.BanPlayer(charactername, steamid.ToString(), caller.DisplayName, "", 31536000);
                 UnturnedChat.Say(GlobalBan.Instance.Translate("command_ban_public", charactername));
                 if (isOnline)
