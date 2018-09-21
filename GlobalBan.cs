@@ -1,4 +1,4 @@
-﻿using Rocket.API.Collections;
+using Rocket.API.Collections;
 using Rocket.Core.Plugins;
 using Rocket.Unturned;
 using Rocket.Unturned.Permissions;
@@ -87,7 +87,7 @@ namespace Apprentice.Globalbanedit
             {
                 if (!Configuration.Instance.KickInsteadReject && Database.IsBanned(player.ToString()))
                 {
-                    rejection = ESteamRejection.AUTH_PUB_BAN;
+                    rejection = ESteamRejection.WHITELISTED;
                 }
             }
             catch (Exception)
